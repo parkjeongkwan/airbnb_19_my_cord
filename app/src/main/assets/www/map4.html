@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, user-scalable=no,  maximum-scale=1, minimum-scale=1, width=device-width" charset="UTF-8">
+    <!--CSS LINK-->
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <style>
+        #map {
+            height: 100%;
+        }
+        .map-info-box { text-align: left}
+        .map-info-box p { margin: 0 0 8px}
+        .map-info-box i {padding-right: .5em;color: #CEC9C9}
+    </style>
+    <title> Google Map </title>
+
+</head>
+<body>
+<div id="map">
+</div>
+
+<!--JS LINK-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2po9awT3gcPJdB_pK8XKHVZitS2zg-1U&callback=mapstart"
+        async defer></script>
+<script>
+    var _list = app.session.getArray("list") ;
+    var host_serial = _list[app.session.getSessionData("contentId")].hostSerial;
+    var _list = JSON.parse(sessionStorage.getItem("list"));
+    var host_serial = _list[sessionStorage.getItem("contentId")].hostSerial;
+    var address = _list[sessionStorage.getItem("contentId")].addr;
+    console.log("세션에서 가져온 호스트 시리얼 : "+ host_serial);
+    console.log("세션에서 가져온 호스트 주소 : "+ address);
+    var map;
+    var geocoder;
+    var lat, lng;
+    var contentString = '￦ '+  _list[sessionStorage.getItem("contentId")].price;
+    geoAddress=()=> {
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address': address}, (results, status)=> {
+            if (status == google.maps.GeocoderStatus.OK) {
+                lat = results[0]['geometry']['location']['lat']();
+                lng = results[0]['geometry']['location']['lng']();
+                map.setCenter(results[0].geometry.location);
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                var image =  new google.maps.MarkerImage("gmap.png", null, null, null, new google.maps.Size(50,50));
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    animation:google.maps.Animation.DROP,
+                    icon: image
+                });
+                marker.addListener('click', function() {
+                    map.setCenter(marker.getPosition());
+                });
+            } else {
+                alert('Geocode was not successful for the followingreason: ' + status);
+            }
+        });
+    };
+    var mapstart=()=> {
+        var mapOptions = {
+            zoom : 17,
+            center : new google.maps.LatLng(lat, lng),
+        };
+        map = new google.maps.Map(document.getElementById('map'),mapOptions);
+        geoAddress();
+    };
+</script>
+</body>
+</html>

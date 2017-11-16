@@ -1,0 +1,329 @@
+/*common*/
+body{
+'background-color': '#ffffff',
+'font-family': '"나눔 고딕","Nanum Gothic","맑은 고딕","Malgun Gothic","Apple Gothic","돋움",Dotum,"Helvetica Neue",Helvetica,Arial,sans-serif !important'
+}
+/*Input Box Style*/
+input {
+    background: transparent;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px #009999;
+}
+/*Google Map*/
+#map {
+    height: 100%;
+}
+/*header*/
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 5%;
+}
+/*login*/
+.pw-guide{
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    color: white;;
+    font-size: 0.8em;
+}
+.arrow{
+    position: relative;
+    display: inline-block;
+    margin: 8px;
+    padding: 8px;
+    box-shadow: 2px -2px 0 0 black inset;
+}
+.arrow-left{
+    transform: rotate(45deg);
+}
+#arrow-box {
+    text-align: center;
+    padding: 0;
+}
+#arrow-box2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+#arrow-a {
+    display: inline-block;
+    border-radius: 50%;
+}
+a:hover .right{
+    border: 0.1em solid white;
+    background-color: white;
+}
+a:hover .right:after {
+    content: '';
+    display: inline-block;
+    margin-top: 1.2em;
+    margin-left: -0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.1em solid #ff434e;
+    border-right: 0.1em solid  #ff434e;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.right {
+    border: 0.1em solid white;
+    background-color: white;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    /* border: 0.1em solid #333; */
+    border-radius: 50%;
+    /* margin-left: 1.5em; */
+}
+.right:after {
+    content: '';
+    display: inline-block;
+    margin-top: 1.2em;
+    margin-left: -0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.1em solid black;
+    border-right: 0.1em solid black;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*login*/
+.login-guide{
+    border-bottom: 2px solid white;
+    color: white;
+    margin: 10px;
+    margin-top: 30px;
+}
+#id, #password{
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    boder-left: 0px;
+    boder-bottom: 0px;
+    outline: none;
+    background: transparent;
+    color: white;
+    margin-top: 10px;
+}
+
+/*이미지 스와이프 테스트*/
+/* external css: flickity.css */
+
+.carousel {
+    background: white;
+    width:100%;
+    margin: 0 auto;
+}
+.carousel-cell {
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    border-radius: 0.5em;
+}
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 100px;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+    background: white;
+}
+/* list-navbar */
+.navbar{
+    height:41px;
+    position:absolute; top:0px;
+    left:0px;
+}
+.navbar-ul {
+    background: white;
+    margin: -1px;
+    padding: 0;
+    list-style: none;
+    position: fixed;
+    width: 100%;
+    border-bottom-width: 4px;
+    border-bottom: 2px solid #D5D8DC;
+    z-index: 200;
+}
+.navbar-ul>li {
+    display: inline-block;
+}
+.navbar-ul>li>a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 10px;
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: black;
+}
+/* list-content */
+.list-img{
+    width: 100%;
+    height:250px;
+    max-width: 100%;
+    max-height: 250px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.list-content{
+    margin-bottom: 5px;
+}
+.navbar-ul>li>a:hover {
+    border-bottom:2px solid #009999;
+}
+
+/* hostel-list */
+.list-img{
+    width: 100%;
+    height: 200px;
+    margin-right: 10px;
+    background: blue;
+    border-radius: 0.5em;
+}
+.content-txt{
+    text-align:left;
+    margin-top:10px;
+    margin-left:5px;
+    margin-bottom: 10px;
+}
+
+#content-txt-info{
+    font-size:13px;
+}
+
+#content-txt-title{
+    font-size:25px;
+}
+
+#content-txt-price{
+    font-size:17px;
+}
+
+/* detail */
+.detail-img{
+    width: 100%;
+    max-height: 300px;
+}
+.detail-title{
+    font-size:22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.detail-content{
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.detail-content-icon{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.hostel-icon{
+    float: left; width: 25%;
+    padding:10px;
+}
+
+#res-btn{
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 17px;
+    right: 20px;
+}
+/* Button One */
+.res-btn {
+    padding: 9px 14px;
+    outline: none;
+    background-color: #FF434E;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px #95a5a6;
+}
+
+.res-btn:hover{
+    background-color: #FF434E;
+}
+
+.res-btn:active {
+    background-color: #FF434E;
+    box-shadow: 0 5px #95a5a6;
+    transform: translateY(4px);
+}
+.detail-footer{
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    bottom: 0px;
+    position: relative;
+}
+.detail-footer p{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    padding: 5px;
+}
+
+/* reservation */
+.header-guide{
+    width: 50px;
+    position: fixed;
+    right: 1px;
+    top: 30px
+}
+/* date picker */
+#pick-date-bar{
+    width: 500px;
+    min-width: 300px;
+    height: 100px;
+    /*border: 1px solid blue;*/
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
+}
+#start-date{
+    float: left;
+    width: 130px;
+    text-align: left;
+    margin-left: 20px;
+}
+#end-date{
+    width: 130px;
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+}
+#calendar{
+    width: 100%;
+    max-width: 400px;
+}
+/*pay*/
+.tab1_on{
+    float: left;
+    background: #862990;
+    padding: 10px 0 10px 0;
+    color: #FFFFFF;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #83981d;
+}
+.tab1_off{
+    float: left;
+    background: #dddddd;
+    padding: 10px 0 10px 0;
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #CCCCCC;
+}
